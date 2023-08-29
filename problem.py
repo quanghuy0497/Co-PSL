@@ -14,7 +14,7 @@ def get_problem(name, *args, **kwargs):
         'f5': F5,
         'f6': F6,
         'vlmop1': VLMOP1,
-        'vlmop2': VLMOP2,       # VLMOP2 with bound = 4
+        'vlmop2': VLMOP2,       # VLMOP2 with bound = 2
         'vlmop3': VLMOP3,
         'dtlz2': DTLZ2,
         're21': RE21,
@@ -22,7 +22,7 @@ def get_problem(name, *args, **kwargs):
         're33': RE33,           # Disk Brake
         're36': RE36,           # Gear Train
         're37': RE37,           # Rocket Injector
-        'cybenko': cybenko      # VLMOP2 with bound = 2
+        'cybenko': cybenko      # VLMOP2 with bound = 4
  }
 
     if name not in PROBLEM:
@@ -38,7 +38,7 @@ class cybenko():
         self.nadir_point = [1, 1]
         self.lbound = torch.tensor([-1]*n_dim).float()
         self.ubound = torch.tensor([1]*n_dim).float()
-        self.bound = 2
+        self.bound = 4
        
     def evaluate(self, x): 
         a = x 
